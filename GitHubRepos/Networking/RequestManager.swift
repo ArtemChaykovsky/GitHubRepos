@@ -10,14 +10,13 @@ import UIKit
 import Alamofire
 
 enum RequestResultCodable<T: Decodable> {
-    case success(response: T)
+    case success(response: T, nextLink: String?)
     case error(message: String?)
 }
 
 typealias RequestClosure<T:Decodable> = (RequestResultCodable<T>) -> ()
 
 let parseErrorString = "Error, Please try later"
-let parseBundleString = "Error on parse data from bundle"
 
 final class RequestManager: RequestInterceptor {
 
@@ -30,6 +29,7 @@ final class RequestManager: RequestInterceptor {
     init() {
         AF.session.configuration.timeoutIntervalForRequest = 15.0
         AF.session.configuration.requestCachePolicy = .reloadRevalidatingCacheData
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
     func performRequest<T: Decodable>(_ requestItem: BaseRequestProtocol, to classType: T.Type, completion: @escaping RequestClosure<T>) {
@@ -84,57 +84,43 @@ final class RequestManager: RequestInterceptor {
         let alamofireRequest: DataRequest = AF.request(encodedRequest, interceptor: self)
         
         alamofireRequest.validate(statusCode: 200..<300).responseDecodable(of: classType, decoder: decoder) { [weak self] response in
-                        
             if let respData = response.data,
                let stringValue = String(data: respData, encoding: .utf8),
                let statusCode = response.response?.statusCode,
                let requestUrl = response.request?.url {
                 print("\n🟡 RESPONSE \(statusCode) \(requestUrl) \n \(stringValue)")
             }
-                        
+            var nextLink = ""
+            if let responseHeaders = response.response?.allHeaderFields as? [String: String] {
+                print("\n🟡 HEADERS \(responseHeaders)")
+                if let linkString = responseHeaders["Link"] {
+                    var dictionary: [String: String] = [:]
+                    let links = linkString.components(separatedBy: ",")
+                    links.forEach({
+                        let components = $0.components(separatedBy:"; ")
+                        let cleanPath = components[0].trimmingCharacters(in: CharacterSet(charactersIn: "<>"))
+                        dictionary[components[1]] = cleanPath
+                    })
+                    if let nextPagePath = dictionary["rel=\"next\""] {
+                        nextLink = nextPagePath
+                    }
+                }
+            }
             switch response.result {
             case .success(let item):
                 print("\n🟢 SUCCESS \(item) \n")
-                completion(.success(response: item))
+                completion(.success(response: item, nextLink: nextLink))
             case .failure(let error):
-                
                 //trying to get parsing error from response
                 if let respError = response.error {
                     print("\n🟣 ERROR \(respError) \n")
                 }
-                
                 //trying to get error message from response
                 let errorDesc = self?.getErrorMessage(data: response.data) ?? error.localizedDescription
                 print("\n🔴 ERROR \(errorDesc) \n")
                 completion(.error(message: errorDesc))
             }
         }
-    }
-    
-    func parseJSON<T: Decodable>(from data: Data?, to classType: T.Type, completion: @escaping RequestClosure<T>) {
-        guard let jsonData = data else {
-            //showAlert(parseErrorString)
-            completion(.error(message: parseErrorString))
-            return
-        }
-
-        var errorStr = parseErrorString
-        if let jsonResult = try? decoder.decode(classType, from: jsonData) {
-            completion(.success(response: jsonResult))
-            return
-        } else { //print decode error for debug purposes
-            do {
-                _ = try decoder.decode(classType, from: jsonData)
-            } catch let error {
-                errorStr = error.localizedDescription
-                print(error)
-            }
-        }
-        if let errorMsg = getErrorMessage(data: jsonData) {
-            completion(.error(message: errorMsg))
-            return
-        }
-        completion(.error(message: errorStr))
     }
     
     func getErrorMessage(data: Data?) -> String? {

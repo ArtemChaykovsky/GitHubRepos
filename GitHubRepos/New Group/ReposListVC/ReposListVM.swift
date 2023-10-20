@@ -17,10 +17,10 @@ final class ReposListVM {
     }
     
     func fetchRepos() {
-        let request = GetReposRequest(paginator: paginator)
+        let request = GetReposRequest(paginator: paginator, period: .day)
         request.perform { [weak self] in
             switch $0 {
-            case .success(let result):
+            case .success(let result, let nextLink):
                 break
             case .error(let error):
                 break
@@ -34,7 +34,18 @@ final class ReposListVM {
 }
     
 enum RepoTimePeriod: String {
-    case day = "1d"
-    case week = "1w"
-    case month = "1m"
+    case day
+    case week
+    case month
+    
+    var dateString: String {
+        switch self {
+        case .day:
+            return Date.dayAgoDateString
+        case .week:
+            return Date.weekAgoDateString
+        case .month:
+            return Date.monthAgoDateString
+        }
+    }
 }

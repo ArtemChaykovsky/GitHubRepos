@@ -73,25 +73,6 @@ class BaseRequest: BaseRequestProtocol {
     func performRequest<T:Decodable>(to classType: T.Type, completion: @escaping RequestClosure<T>) {
         RequestManager.shared.performRequest(self, to: classType, completion: completion)
     }
-    
-    @discardableResult
-    func performRequestAsync<T: Decodable>(to classType: T.Type = EmptyDecodable.self) async throws -> T {
-        try await withCheckedThrowingContinuation { [weak self] continuation in
-            self?.performRequest(to: classType, completion: { response in
-                switch response {
-                case .success(let responseObject):
-                    if T.self == EmptyDecodable.self, let emptyDecodable = EmptyDecodable() as? T {
-                        continuation.resume(returning: emptyDecodable)
-                        return
-                    }
-                    continuation.resume(returning: responseObject)
-                case .error(let message):
-                    let errorMsg = message ?? parseErrorString
-                    continuation.resume(throwing: ErrorType.localError(errorMsg))
-                }
-            })
-        }
-    }
 }
 
 enum ResponseType {

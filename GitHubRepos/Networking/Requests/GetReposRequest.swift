@@ -11,9 +11,11 @@ import Alamofire
 final class GetReposRequest: BaseRequest {
     
     let paginator: SimplePaginator
+    let period: RepoTimePeriod
 
-    init(paginator: SimplePaginator) {
+    init(paginator: SimplePaginator, period: RepoTimePeriod) {
         self.paginator = paginator
+        self.period = period
     }
     
     override func apiPath() -> String? {
@@ -29,7 +31,7 @@ final class GetReposRequest: BaseRequest {
                                       "per_page": paginator.limit,
                                       "sort": "stars",
                                       "order": "desc",
-                                      "q": "created:>"]
+                                      "q": "created:>\(period.dateString)"]
         return params
     }
     
