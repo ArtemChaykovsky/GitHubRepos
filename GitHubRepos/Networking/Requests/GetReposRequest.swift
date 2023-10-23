@@ -10,12 +10,12 @@ import Alamofire
 
 final class GetReposRequest: BaseRequest {
     
-    let paginator: SimplePaginator
-    let period: RepoTimePeriod
+    let period: TimePeriod
+    let nextUrl: String?
 
-    init(paginator: SimplePaginator, period: RepoTimePeriod) {
-        self.paginator = paginator
+    init(period: TimePeriod, nextUrl: String?) {
         self.period = period
+        self.nextUrl = nextUrl
     }
     
     override func apiPath() -> String? {
@@ -27,8 +27,18 @@ final class GetReposRequest: BaseRequest {
     }
     
     override func parameters() -> [String : Any]? {
-        let params: [String : Any] = ["page": paginator.currentOffset,
-                                      "per_page": paginator.limit,
+        if let nextUrl {
+            guard let components = URLComponents(string: nextUrl), let items = components.queryItems else {
+                return [:]
+            }
+            var parameters = [String : Any]()
+            for item in items {
+                parameters[item.name] = item.value
+            }
+            return parameters
+        }
+        let params: [String : Any] = ["page": 1,
+                                      "per_page": 100,
                                       "sort": "stars",
                                       "order": "desc",
                                       "q": "created:>\(period.dateString)"]

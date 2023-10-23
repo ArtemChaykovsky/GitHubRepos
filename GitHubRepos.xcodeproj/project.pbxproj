@@ -8,6 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		B13174EA2AE26CAD004952B1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13174E92AE26CAD004952B1 /* Date.swift */; };
+		B13174ED2AE29A66004952B1 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13174EC2AE29A66004952B1 /* Defines.swift */; };
+		B13174F12AE2A579004952B1 /* RepoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13174EF2AE2A579004952B1 /* RepoInfoCell.swift */; };
+		B13174F22AE2A579004952B1 /* RepoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13174F02AE2A579004952B1 /* RepoInfoCell.xib */; };
+		B13174F42AE4B102004952B1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13174F32AE4B102004952B1 /* UITableView.swift */; };
+		B13174F62AE4B353004952B1 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13174F52AE4B353004952B1 /* UIViewController.swift */; };
+		B13174F82AE4B6C3004952B1 /* ReposDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13174F72AE4B6C3004952B1 /* ReposDataSource.swift */; };
+		B13174FA2AE4BBE3004952B1 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13174F92AE4BBE3004952B1 /* Array.swift */; };
+		B13174FD2AE5F835004952B1 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13174FC2AE5F835004952B1 /* TabBarCoordinator.swift */; };
+		B13174FF2AE5FC65004952B1 /* ReposListTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13174FE2AE5FC65004952B1 /* ReposListTabCoordinator.swift */; };
+		B13175012AE5FCF1004952B1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13175002AE5FCF1004952B1 /* Color.swift */; };
+		B13175032AE600CA004952B1 /* FavouritesListTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13175022AE600CA004952B1 /* FavouritesListTabCoordinator.swift */; };
+		B13175052AE603D2004952B1 /* FavouritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13175042AE603D2004952B1 /* FavouritesListVC.swift */; };
+		B13175072AE6066F004952B1 /* FavouritesListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13175062AE6066F004952B1 /* FavouritesListVM.swift */; };
+		B13175092AE60693004952B1 /* FavouritesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13175082AE60693004952B1 /* FavouritesListCoordinator.swift */; };
+		B131750C2AE60AD9004952B1 /* ImageCachingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131750B2AE60AD9004952B1 /* ImageCachingService.swift */; };
+		B131750E2AE60B5E004952B1 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131750D2AE60B5E004952B1 /* UIImageView.swift */; };
+		B13175102AE60E60004952B1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131750F2AE60E60004952B1 /* UIView.swift */; };
+		B13175152AE61F49004952B1 /* RepoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13175142AE61F49004952B1 /* RepoDetailsVC.swift */; };
+		B13175172AE61F8D004952B1 /* RepoDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13175162AE61F8D004952B1 /* RepoDetailsCoordinator.swift */; };
+		B13175192AE61FBF004952B1 /* RepoDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13175182AE61FBF004952B1 /* RepoDetailsVM.swift */; };
+		B131751B2AE62E33004952B1 /* DiskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131751A2AE62E33004952B1 /* DiskService.swift */; };
+		B131751D2AE62E49004952B1 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131751C2AE62E49004952B1 /* StorageService.swift */; };
 		B16527082AE0F545007DA973 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16527072AE0F545007DA973 /* AppDelegate.swift */; };
 		B165270C2AE0F545007DA973 /* ReposListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B165270B2AE0F545007DA973 /* ReposListVC.swift */; };
 		B165270F2AE0F545007DA973 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B165270D2AE0F545007DA973 /* Main.storyboard */; };
@@ -31,6 +53,28 @@
 
 /* Begin PBXFileReference section */
 		B13174E92AE26CAD004952B1 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		B13174EC2AE29A66004952B1 /* Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
+		B13174EF2AE2A579004952B1 /* RepoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInfoCell.swift; sourceTree = "<group>"; };
+		B13174F02AE2A579004952B1 /* RepoInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoInfoCell.xib; sourceTree = "<group>"; };
+		B13174F32AE4B102004952B1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		B13174F52AE4B353004952B1 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		B13174F72AE4B6C3004952B1 /* ReposDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposDataSource.swift; sourceTree = "<group>"; };
+		B13174F92AE4BBE3004952B1 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		B13174FC2AE5F835004952B1 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		B13174FE2AE5FC65004952B1 /* ReposListTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListTabCoordinator.swift; sourceTree = "<group>"; };
+		B13175002AE5FCF1004952B1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B13175022AE600CA004952B1 /* FavouritesListTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListTabCoordinator.swift; sourceTree = "<group>"; };
+		B13175042AE603D2004952B1 /* FavouritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListVC.swift; sourceTree = "<group>"; };
+		B13175062AE6066F004952B1 /* FavouritesListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListVM.swift; sourceTree = "<group>"; };
+		B13175082AE60693004952B1 /* FavouritesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListCoordinator.swift; sourceTree = "<group>"; };
+		B131750B2AE60AD9004952B1 /* ImageCachingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCachingService.swift; sourceTree = "<group>"; };
+		B131750D2AE60B5E004952B1 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		B131750F2AE60E60004952B1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		B13175142AE61F49004952B1 /* RepoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsVC.swift; sourceTree = "<group>"; };
+		B13175162AE61F8D004952B1 /* RepoDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsCoordinator.swift; sourceTree = "<group>"; };
+		B13175182AE61FBF004952B1 /* RepoDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsVM.swift; sourceTree = "<group>"; };
+		B131751A2AE62E33004952B1 /* DiskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskService.swift; sourceTree = "<group>"; };
+		B131751C2AE62E49004952B1 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		B16527042AE0F545007DA973 /* GitHubRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16527072AE0F545007DA973 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B165270B2AE0F545007DA973 /* ReposListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListVC.swift; sourceTree = "<group>"; };
@@ -65,6 +109,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B13174EB2AE29A32004952B1 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				B13174EC2AE29A66004952B1 /* Defines.swift */,
+			);
+			path = Defines;
+			sourceTree = "<group>";
+		};
+		B13174EE2AE2A145004952B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B13174EF2AE2A579004952B1 /* RepoInfoCell.swift */,
+				B13174F02AE2A579004952B1 /* RepoInfoCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B13174FB2AE5F7FF004952B1 /* FavouritesListVC */ = {
+			isa = PBXGroup;
+			children = (
+				B13175042AE603D2004952B1 /* FavouritesListVC.swift */,
+				B13175062AE6066F004952B1 /* FavouritesListVM.swift */,
+				B13175082AE60693004952B1 /* FavouritesListCoordinator.swift */,
+			);
+			path = FavouritesListVC;
+			sourceTree = "<group>";
+		};
+		B131750A2AE60A90004952B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B131751C2AE62E49004952B1 /* StorageService.swift */,
+				B131751A2AE62E33004952B1 /* DiskService.swift */,
+				B131750B2AE60AD9004952B1 /* ImageCachingService.swift */,
+				B13174F72AE4B6C3004952B1 /* ReposDataSource.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B13175132AE61F05004952B1 /* RepoDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				B13175142AE61F49004952B1 /* RepoDetailsVC.swift */,
+				B13175162AE61F8D004952B1 /* RepoDetailsCoordinator.swift */,
+				B13175182AE61FBF004952B1 /* RepoDetailsVM.swift */,
+			);
+			path = RepoDetailsVC;
+			sourceTree = "<group>";
+		};
 		B16526FB2AE0F544007DA973 = {
 			isa = PBXGroup;
 			children = (
@@ -84,15 +176,17 @@
 		B16527062AE0F545007DA973 /* GitHubRepos */ = {
 			isa = PBXGroup;
 			children = (
+				B1F480F82AE0F82E00594770 /* Screens */,
+				B1FEBB842AE164E500B884CE /* Views */,
 				B1FEBB972AE1EAD500B884CE /* Models */,
 				B1FEBB872AE1A67900B884CE /* Networking */,
-				B1FEBB842AE164E500B884CE /* Views */,
+				B1F480FB2AE0FE5B00594770 /* Storyboards */,
+				B1F481002AE10F0F00594770 /* Coordinators */,
 				B1F481042AE130C400594770 /* Extensions */,
+				B131750A2AE60A90004952B1 /* Services */,
 				B1F481032AE1111000594770 /* Resources */,
 				B1F480FA2AE0FE2700594770 /* Application */,
-				B1F480FB2AE0FE5B00594770 /* Storyboards */,
-				B1F480F82AE0F82E00594770 /* Screens */,
-				B1F481002AE10F0F00594770 /* Coordinators */,
+				B13174EB2AE29A32004952B1 /* Defines */,
 			);
 			path = GitHubRepos;
 			sourceTree = "<group>";
@@ -100,6 +194,8 @@
 		B1F480F82AE0F82E00594770 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B13175132AE61F05004952B1 /* RepoDetailsVC */,
+				B13174FB2AE5F7FF004952B1 /* FavouritesListVC */,
 				B1F480F92AE0F83D00594770 /* ReposListVC */,
 			);
 			path = Screens;
@@ -137,7 +233,10 @@
 		B1F481002AE10F0F00594770 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				B13174FC2AE5F835004952B1 /* TabBarCoordinator.swift */,
 				B1F481012AE110F700594770 /* AppCoordinator.swift */,
+				B13174FE2AE5FC65004952B1 /* ReposListTabCoordinator.swift */,
+				B13175022AE600CA004952B1 /* FavouritesListTabCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -155,6 +254,12 @@
 			children = (
 				B13174E92AE26CAD004952B1 /* Date.swift */,
 				B1F481052AE1326E00594770 /* Storyboard.swift */,
+				B13174F32AE4B102004952B1 /* UITableView.swift */,
+				B13174F52AE4B353004952B1 /* UIViewController.swift */,
+				B13174F92AE4BBE3004952B1 /* Array.swift */,
+				B13175002AE5FCF1004952B1 /* Color.swift */,
+				B131750D2AE60B5E004952B1 /* UIImageView.swift */,
+				B131750F2AE60E60004952B1 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -162,6 +267,7 @@
 		B1FEBB842AE164E500B884CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B13174EE2AE2A145004952B1 /* Cells */,
 				B1FEBB852AE164FC00B884CE /* AKActivity.swift */,
 			);
 			path = Views;
@@ -264,6 +370,7 @@
 				B16527142AE0F546007DA973 /* LaunchScreen.storyboard in Resources */,
 				B16527112AE0F546007DA973 /* Assets.xcassets in Resources */,
 				B165270F2AE0F545007DA973 /* Main.storyboard in Resources */,
+				B13174F22AE2A579004952B1 /* RepoInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,22 +381,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B13175102AE60E60004952B1 /* UIView.swift in Sources */,
 				B165270C2AE0F545007DA973 /* ReposListVC.swift in Sources */,
 				B1FEBB962AE1DD1900B884CE /* SimplePaginator.swift in Sources */,
 				B16527082AE0F545007DA973 /* AppDelegate.swift in Sources */,
+				B131750C2AE60AD9004952B1 /* ImageCachingService.swift in Sources */,
 				B13174EA2AE26CAD004952B1 /* Date.swift in Sources */,
+				B131751B2AE62E33004952B1 /* DiskService.swift in Sources */,
 				B1FEBB922AE1CDA200B884CE /* GetReposRequest.swift in Sources */,
+				B13175172AE61F8D004952B1 /* RepoDetailsCoordinator.swift in Sources */,
 				B1F481022AE110F700594770 /* AppCoordinator.swift in Sources */,
 				B1FEBB892AE1A6E800B884CE /* RequestManager.swift in Sources */,
 				B1FEBB862AE164FC00B884CE /* AKActivity.swift in Sources */,
 				B1FEBB942AE1D0F400B884CE /* Api.swift in Sources */,
+				B13174F12AE2A579004952B1 /* RepoInfoCell.swift in Sources */,
+				B13175092AE60693004952B1 /* FavouritesListCoordinator.swift in Sources */,
 				B1F480FF2AE10BB300594770 /* ReposListCoordinator.swift in Sources */,
 				B1F481062AE1326E00594770 /* Storyboard.swift in Sources */,
+				B131750E2AE60B5E004952B1 /* UIImageView.swift in Sources */,
+				B13175152AE61F49004952B1 /* RepoDetailsVC.swift in Sources */,
 				B1FEBB902AE1B4AF00B884CE /* ErrorType.swift in Sources */,
+				B131751D2AE62E49004952B1 /* StorageService.swift in Sources */,
+				B13174F82AE4B6C3004952B1 /* ReposDataSource.swift in Sources */,
+				B13175032AE600CA004952B1 /* FavouritesListTabCoordinator.swift in Sources */,
 				B1FEBB8E2AE1B03C00B884CE /* EmptyDecodable.swift in Sources */,
+				B13174F62AE4B353004952B1 /* UIViewController.swift in Sources */,
+				B13174FF2AE5FC65004952B1 /* ReposListTabCoordinator.swift in Sources */,
+				B13175052AE603D2004952B1 /* FavouritesListVC.swift in Sources */,
 				B1FEBB992AE1EC9700B884CE /* ReposResponse.swift in Sources */,
+				B13175012AE5FCF1004952B1 /* Color.swift in Sources */,
+				B13174FA2AE4BBE3004952B1 /* Array.swift in Sources */,
 				B1F480FD2AE10B4500594770 /* ReposListVM.swift in Sources */,
 				B1FEBB8C2AE1ACE100B884CE /* BaseRequest.swift in Sources */,
+				B13175072AE6066F004952B1 /* FavouritesListVM.swift in Sources */,
+				B13174FD2AE5F835004952B1 /* TabBarCoordinator.swift in Sources */,
+				B13174ED2AE29A66004952B1 /* Defines.swift in Sources */,
+				B13174F42AE4B102004952B1 /* UITableView.swift in Sources */,
+				B13175192AE61FBF004952B1 /* RepoDetailsVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -419,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

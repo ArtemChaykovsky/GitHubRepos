@@ -1,20 +1,20 @@
 //
-//  ReposListCoordinator.swift
+//  FavouritesListCoordinator.swift
 //  GitHubRepos
 //
-//  Created by Artem Chaykovsky on 18.10.2023.
+//  Created by Artem Chaykovsky on 20.10.2023.
 //
 
 import UIKit
 
-final class ReposListCoordinator {
-    
-    private weak var controller = Storyboard.main.controller(withClass: ReposListVC.self)
+final class FavouritesListCoordinator {
+
+    private weak var controller = Storyboard.main.controller(withClass: FavouritesListVC.self)
     private weak var navController: UINavigationController?
     
     init(navController: UINavigationController?) {
         self.navController = navController
-        controller?.viewModel = ReposListVM(self)
+        controller?.viewModel = FavouritesListVM(self)
     }
     
     func start() {

@@ -36,8 +36,8 @@ final class RequestManager: RequestInterceptor {
         
         // maintenance tracking
         semaphore.wait()
-        if !isRequestsAllowed  { // allow only 
-            if let path = requestItem.apiPath(), !path.contains("itunes.apple.com") {
+        if !isRequestsAllowed { // allow only 
+            if let _ = requestItem.apiPath() {
                 semaphore.signal()
                 return
             }
@@ -76,11 +76,9 @@ final class RequestManager: RequestInterceptor {
             completion(.error(message: "Common.Error"))
             return
         }
-        
         if let jsonData = requestItem.rawData() {
             encodedRequest.httpBody = jsonData
         }
-        
         let alamofireRequest: DataRequest = AF.request(encodedRequest, interceptor: self)
         
         alamofireRequest.validate(statusCode: 200..<300).responseDecodable(of: classType, decoder: decoder) { [weak self] response in
@@ -102,7 +100,7 @@ final class RequestManager: RequestInterceptor {
                         dictionary[components[1]] = cleanPath
                     })
                     if let nextPagePath = dictionary["rel=\"next\""] {
-                        nextLink = nextPagePath
+                        nextLink = nextPagePath.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: " ", with: "")
                     }
                 }
             }
@@ -124,31 +122,10 @@ final class RequestManager: RequestInterceptor {
     }
     
     func getErrorMessage(data: Data?) -> String? {
-
         guard let jsonData = data, let dict = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String : Any] else {  return nil }
-        
-        if let details = dict["details"] as? [[String: Any]] {
-            var totalValue = ""
-            for dict in details {
-                for key in dict.keys {
-                    if let oneValue = dict[key] as? [String] {
-                        if !totalValue.isEmpty {
-                            totalValue = totalValue + "\n\n"
-                        }
-                        totalValue += oneValue.joined(separator: "\n")
-                        print("totalValue")
-                    }
-                }
-            }
-            if !totalValue.isEmpty {
-                return totalValue
-            }
-        }
-        
         if let message = dict["message"] as? String {
             return message
         }
-        
         return nil
     }
 }

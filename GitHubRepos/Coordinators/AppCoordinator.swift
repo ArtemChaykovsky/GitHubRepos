@@ -10,7 +10,6 @@ import UIKit
 final class AppCoordinator {
     
     private let window: UIWindow
-    private let rootNav = UINavigationController()
     
     init(window: UIWindow) {
         self.window = window
@@ -22,8 +21,7 @@ final class AppCoordinator {
     }
     
     private func start() {
-        window.rootViewController = rootNav
-        let coord = ReposListCoordinator(navController: rootNav)
+        let coord = TabBarCoordinator(window: window)
         coord.start()
     }
 }

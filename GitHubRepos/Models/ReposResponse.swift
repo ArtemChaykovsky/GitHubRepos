@@ -12,12 +12,33 @@ final class ReposResponse: Codable {
 }
 
 final class RepoItem: Codable {
+    var id: Int?
     var owner: Owner?
     var description: String?
     var stargazersCount: Int?
     var language: String?
     var forks: Int?
     var name: String?
+    var createdAt: String?
+    var htmlUrl: String?
+    
+    func numberOfStarsText() -> String {
+        return "Number of stars: \(stargazersCount ?? 0)"
+    }
+    
+    func descriptionText() -> String? {
+        if let description, !description.isEmpty {
+            return description
+        }
+        if let name = owner?.login {
+            return "This is \(name)'s repository"
+        }
+        return nil
+    }
+    
+    func isSaved() -> Bool {
+        return StorageService.shared.isSaved(item: self)
+    }
 }
 
 final class Owner: Codable {
